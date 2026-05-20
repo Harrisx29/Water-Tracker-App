@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="main-container">
+
+        <!-- LEFT SIDE -->
+        <div class="form-section">
+
+            <div class="card large-card">
+                <h1>Water Tracker</h1>
+
+                <form method="POST">
+
+                    <label>Name</label>
+                    <input type="text" name="name" required>
+
+                    <label>Water Goal Today (Ounces)</label>
+                    <input type="number" step="0.1" name="goal" required>
+
+                    <label>Select Time Interval</label>
+
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="interval" value="1" required>
+                            1 Hour Increment
+                        </label>
+
+                        <label>
+                            <input type="radio" name="interval" value="2">
+                            2 Hour Increment
+                        </label>
+
+                        <label>
+                            <input type="radio" name="interval" value="3">
+                            3 Hour Increment
+                        </label>
+                    </div>
+
+                    <button type="submit">Calculate Plan</button>
+
+                </form>
+            </div>
+
+            
+
+        </div>
+
+    <!-- PROGRESS TABLE -->
+    <div class="table-container">
+
+        <div class="card table-card">
+            <h2>Progress Tracker</h2>
+
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Goal (Ounces)</th>
+                    <th>Interval (Hours)</th>
+                    <th>Date</th>
+                </tr>
+
+                {% for row in progress %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                </tr>
+                {% endfor %}
+                
+                
+
+            </table>
+
+            <a href="/reset">
+                <button class="reset-btn">Reset Progress</button>
+            </a>
+
+            {% if summary %}
+                <div class="image-frame">
+                    <img src="{{ url_for('static', filename='img/water.png') }}" alt="Water Image">
+                </div>
+                {% endif %}
+            
+            {% if summary %}
+            <div class="card result-card">
+                <h2>Your Water Plan</h2>
+                <p>{{ summary }}</p>
+            </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
+

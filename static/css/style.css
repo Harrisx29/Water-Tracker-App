@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif, Helvetica;
+}
+
+body {
+    background: linear-gradient(to bottom right, #0B1B63, #1B3DA8);
+    color: white;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.form-section {
+    flex: 1;
+}
+
+.card {
+background: rgba(255, 255, 255, 0.12);
+backdrop-filter: blur(10px);
+border-radius: 25px;
+padding: 40px;
+box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+border: 2px solid rgba(255,255,255,0.2);
+}
+
+.large-card {
+    min-height: 500px;
+}
+
+h1 {
+    
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+   
+   font-size: 20px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 18px;
+    border-radius: 12px;
+    border: none;
+    font-size: 18px;
+}
+
+.radio-group {
+    margin-top: 15px;
+}
+
+
+.radio-group label {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+button {
+    margin-top: 30px;
+    padding: 18px 35px;
+    background: #80B7ED;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #5A94F3;
+}
+
+.result-card {
+    margin-top: 30px;
+}
+
+.result-card p {
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+.image-frame {
+    width: 350px;
+    height: 350px;
+    margin: 30px auto 0 auto;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 6px solid white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.table-container {
+    margin-top: 30px;
+}
+
+.table-card {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 18px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 18px;
+}
+
+th {
+    background: rgba(255,255,255,0.1);
+    font-size: 20px;
+}
+
+.reset-btn {
+    background: #d62828;
+    margin-top: 25px;
+}
+
+.reset-btn:hover {
+    background: #a4161a;
+}
+
+@media (max-width: 1000px) {
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .image-frame {
+        width: 100%;
+        max-width: 450px;
+    }
+
+}
