@@ -8,13 +8,11 @@ A simple web-based water tracking application built with Python, Flask, HTML, an
 
 - Personalized water intake calculations
 - Custom daily water goals in ounces
-- User-selected start and end times
 - Adjustable drinking intervals
 - Progress/result tracker
 - CSV logging system for saved progress
 - Reset progress functionality
 - Responsive web-based interface
-- Dynamic image display after calculation
 
 ---
 
